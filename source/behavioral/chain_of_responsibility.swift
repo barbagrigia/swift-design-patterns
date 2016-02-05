@@ -7,7 +7,6 @@ class Casset {
 		self.amount = amount
 	}
 }
-
 class Atm {
 	private var cassets : [Casset ] = [ ]
 	private var cash : [Int:Int] = [:]
