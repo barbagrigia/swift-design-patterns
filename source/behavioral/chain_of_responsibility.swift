@@ -31,9 +31,9 @@ class Atm {
 		cassets.append(casset)
 	}
 
-	internal func withdrawCash(sum: Int) -&gt; Bool {
+	internal func withdrawCash(sum: Int) -> Bool {
 		isCanWithdraw = false
-		recursion(sum, level: 0, keys: cash.keys.sort({ (a, b) -&gt; Bool in a &gt; b }))
+		recursion(sum, level: 0, keys: cash.keys.sort({ (a, b) -> Bool in a > b }))
 		if isCanWithdraw == true {
 			// TODO: iterate over cassets, reduce the amount of the relevant banknotes, if casset is empty - disconnect it. Recalculate variable cash.
 		}
@@ -51,7 +51,7 @@ class Atm {
 		let left = sum - key * count
 		if left == 0 {
 			isCanWithdraw = true
-		} else if level + 1 &lt; keys.count {
+		} else if level + 1 < keys.count {
 			recursion(left, level: level + 1, keys: keys)
 		}
 	}
